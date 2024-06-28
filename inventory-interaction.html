@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory-Interaction</title>
+    <link rel="stylesheet" href="inventory-interaction.css"> 
+</head>
+<body>
+    <div id="main-container">
+        <div id="inventory-container">
+            <div id="food-name-container"><input id="food-name" type="text" placeholder="Food Article"></div>
+            <div id="buttons-overall-container">
+                <div id="buttons-container">
+                    <button class="class-buttons">Perishable</button>
+                    <button class="class-buttons">Fruits</button>
+                    <button class="class-buttons">Vegetables</button>
+                    <button class="class-buttons">Grocery</button>
+                    <button class="class-buttons">Miscelleanous</button>
+                </div>
+            </div>
+            <div id="dates-container">
+                <input id="date-bought" type="text" placeholder="Buy Date">
+                <input id="best-before-date" type="text" placeholder="Expiry Date">
+                <input id="quantity-in-number" type="text" inputmode="numeric" pattern="[0=9]+" placeholder="number of items">
+                <input id="quantity-in-measurement" type="text" inputmode="numeric" pattern="[0=9]+" placeholder="weight">
+            </div>
+            <button id="submit-button">Submit</button>
+        </div>    
+    </div>
+    <script src="inventory.js"></script>
+</body>
+</html>

@@ -1,12 +1,14 @@
 class food {
     static id = 1;
 
-    constructor (name, dateBought, quantityMeasurement, quantityNumber = 1) {
+    constructor (name, dateBought, bestBeforeDate, type, quantityMeasurement, quantityNumber = 1) {
         this.id = food.id;
         this.name = name;
         this.dateBought = dateBought;
+        this.bestBeforeDate = bestBeforeDate;
         this.quantityMeasurement = quantityMeasurement;
         this.quantityNumber = quantityNumber;
+        this.type = type;
 
         food.id++;
     }
@@ -27,27 +29,37 @@ const bestBeforeDate = document.getElementById('best-before-date');
 const quantityNumber = document.getElementById('quantity-in-number');
 const quantityMeasurement = document.getElementById('quantity-in-measurement');
 const submitButton = document.getElementById('submit-button');
+const perishable = document.getElementById('perishable');
+const fruits = document.getElementById('fruits');
+const vegetables = document.getElementById('vegetables');
+const groceries = document.getElementById('groceries');
+const miscelleanous = document.getElementById('miscelleanous');
 
-let foodName, buyDate, expiryDate, number, measurement;
-
-function addingEvents(element, variable) {
-    element.addEventListener('input', () => {
+//function to add events
+function addingEvents(element, variable, event) {
+    element.addEventListener(event, () => {
         foodObject[variable] = element.value.toLowerCase();
     })
 
 }
 
 //adds input event listener to all input fields
-addingEvents(foodArticle, 'foodName');
-addingEvents(dateBought, 'buyDate');
-addingEvents(bestBeforeDate, 'expiryDate')
-addingEvents(quantityNumber, 'number');
-addingEvents(quantityMeasurement, 'measurement');
+addingEvents(foodArticle, 'foodName', 'input');
+addingEvents(dateBought, 'buyDate', 'input');
+addingEvents(bestBeforeDate, 'expiryDate', 'input')
+addingEvents(quantityNumber, 'number', 'input');
+addingEvents(quantityMeasurement, 'measurement', 'input');
+addingEvents(perishable, 'foodType', 'click');
+addingEvents(fruits, 'foodType', 'click');
+addingEvents(vegetables, 'foodType', 'click');
+addingEvents(groceries, 'foodType', 'click');
+addingEvents(miscelleanous, 'foodType', 'click');
 
 //updates a new food object and adds to inventory
 submitButton.addEventListener('click', () => {
-    newfoodItem = new food(foodObject.foodName, foodObject.buyDate, foodObject.measurement, foodObject.number);
+    newfoodItem = new food(foodObject.foodName, foodObject.buyDate, foodObject.bestBeforeDate, foodObject.foodType, foodObject.measurement, foodObject.number);
     inventory.push(newfoodItem);
+    console.log(inventory);
 })
 
 //checks if an input is number or not

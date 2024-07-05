@@ -1,4 +1,4 @@
-import { useState } from 'react'
+/*import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -30,6 +30,17 @@ function App() {
       </p>
     </>
   )
+}
+
+export default App*/
+
+import React from 'react'
+import Input_page from './input_page'
+
+const App = () => {
+  return (
+      <Input_page />
+    )
 }
 
 export default App

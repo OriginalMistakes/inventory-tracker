@@ -1,0 +1,67 @@
+:root {
+    --mango: #FFD700;
+    --passionfruit: #e684b5;
+    --coconut: #FFFFFF;
+    --pineapple: #FFD700;
+    --ocean: #00BFFF;
+}
+
+body {
+    background-color: var(--pineapple);
+    padding: 10px;
+    text-align: center;
+}
+
+input,
+input::placeholder {
+    text-align: center;
+    color: var(--coconut);
+    margin: 0.75rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: orange;
+}
+
+#input-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--passionfruit);
+    padding: 20px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+#food-article-name {
+    box-sizing: border-box;
+}
+
+#buttons-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.75rem;
+}
+
+.input-types-button {
+    background-color: var(--ocean);
+    color: var(--coconut);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+#info-form {
+    width: 100%;
+    display: grid;
+    grid-template: 1fr 1fr/ 1fr 1fr;
+    column-gap: 0.5rem;
+}
+
+#submit-button {
+    background-color: #19b91f;
+    color: var(--coconut);
+    border: none;
+    border-radius: 0.5rem;
+    margin: auto;
+    padding: 1rem;
+}

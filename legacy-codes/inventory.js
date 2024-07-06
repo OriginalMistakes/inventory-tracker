@@ -59,7 +59,6 @@ addingEvents(miscelleanous, 'foodType', 'click');
 submitButton.addEventListener('click', () => {
     newfoodItem = new food(foodObject.foodName, foodObject.buyDate, foodObject.bestBeforeDate, foodObject.foodType, foodObject.measurement, foodObject.number);
     inventory.push(newfoodItem);
-    console.log(inventory);
 })
 
 //checks if an input is number or not

@@ -23,6 +23,10 @@ input::placeholder {
     background-color: orange;
 }
 
+button {
+    cursor: pointer;
+}
+
 #input-box {
     display: flex;
     flex-direction: column;

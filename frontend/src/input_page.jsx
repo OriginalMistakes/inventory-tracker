@@ -10,10 +10,7 @@ const input_page = () => {
   function takeInput(func) {
     const {value} = event.target;
     func(value);
-    console.log(event.target);
   }
-
-  useEffect(() => console.log(buyDate), [buyDate])
 
   return (
     <div id='input-page-container'>

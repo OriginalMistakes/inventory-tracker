@@ -8,27 +8,22 @@ const input_page = () => {
   const currentDate = new Date();
   const futureDate = new Date(currentDate);
   futureDate.setDate(futureDate.getDate() + 7);
-  const [buyDate, setBuyDate] = useState(currentDate);
-  const [expiryDate, setExpiryDate] = useState(futureDate);
+  const [buyDate, setBuyDate] = useState('Buy Date');
+  const [expiryDate, setExpiryDate] = useState('Expiry Date');
 
-  const [number, setNumber] = useState(0);
-  const [quantity, setQuantity] = useState(0);
+  const [number, setNumber] = useState('Number');
+  const [quantity, setQuantity] = useState('Quantity');
 
-  function takeInput(func) {
+  function takeInput(event,func) {
     const {value} = event.target;
     func(value);
   }
 
-  function changeInputType(event) {
-    event.target.type = event.target.type === 'text' ? 'date' : 'text';
-  }
-
-  function checkInputType(value, fun) {
-    if (isNaN(value)) {
-      fun(0);
-      return false;
-    }
-    return true;
+  const inputValidation = (event,func) => {
+    const {value} = event.target;
+    if (isNaN(Number(value)) || Number(value) < 1) {
+      func(0)}
+    else takeInput(event,func);
   }
 
   return (
@@ -49,20 +44,20 @@ const input_page = () => {
         </div>
 
         <form id='info-form'>
-          <input type='text' placeholder='Buy Date' 
-          onFocus={() => {changeInputType(event)}} 
-          onInput={() => takeInput(setBuyDate)}/>
+          <input type='text' 
+            onFocus={(event) => event.target.type = 'date'} 
+            onInput={(event) => takeInput(event, setBuyDate)}
+            value={buyDate}/>
           <input type='text' placeholder='Expiry Date' 
-          onFocus={() => changeInputType(event)} 
-          onInput={() => takeInput(setExpiryDate)}/>
-          <input type='text' placeholder='Number'
-          onInput={() => {
-            if (checkInputType(number, setNumber)) {
-              takeInput(setNumber);
-            }
-          }}/>
-          <input type='text' placeholder='Quantity'
-          onInput={() => takeInput(setNumber)}/>
+            onFocus={(event) => event.target.type = 'date'} 
+            onInput={(event) => takeInput(event, setExpiryDate)}
+            value={expiryDate}/>
+          <input type='text' 
+            onInput={(event) => inputValidation(event, setNumber, 'Number')}
+            value={number}/>
+          <input type='text'
+            onInput={(event) => inputValidation(event, setQuantity)}
+            value={quantity}/>
         </form>
 
         <button id='submit-button'>Submit</button>

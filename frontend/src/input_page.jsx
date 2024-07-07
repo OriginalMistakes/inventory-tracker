@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import "./input_page.css"
 
 const input_page = () => {
+  //take inputs- name,type,Buy Date, Expiry Date, Number, Quantity
   const [name, setName] = useState('');
   const [type, setType] = useState('');
-
-  const currentDate = new Date();
-  const futureDate = new Date(currentDate);
-  futureDate.setDate(futureDate.getDate() + 7);
   const [buyDate, setBuyDate] = useState('Buy Date');
   const [expiryDate, setExpiryDate] = useState('Expiry Date');
 
   const [number, setNumber] = useState('Number');
   const [quantity, setQuantity] = useState('Quantity');
+
+  //get current date and temporary expiry date
+  const currentDate = new Date();
+  const futureDate = new Date(currentDate);
+  futureDate.setDate(futureDate.getDate() + 7);
 
   function takeInput(event,func) {
     const {value} = event.target;
@@ -42,7 +44,7 @@ const input_page = () => {
           <button className='input-types-button' value="miscelleanous" 
           onClick={() => takeInput(setType)}>iscelleanous</button>
         </div>
-
+{/*onfocus - changes type and oninput - takes input*/}
         <form id='info-form'>
           <input type='text' 
             onFocus={(event) => event.target.type = 'date'} 
@@ -52,8 +54,9 @@ const input_page = () => {
             onFocus={(event) => event.target.type = 'date'} 
             onInput={(event) => takeInput(event, setExpiryDate)}
             value={expiryDate}/>
+{/*validates input as numeric and passes it to take the input */}
           <input type='text' 
-            onInput={(event) => inputValidation(event, setNumber, 'Number')}
+            onInput={(event) => inputValidation(event, setNumber)}
             value={number}/>
           <input type='text'
             onInput={(event) => inputValidation(event, setQuantity)}

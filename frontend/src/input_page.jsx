@@ -7,7 +7,6 @@ const input_page = () => {
   const [type, setType] = useState('');
   const [buyDate, setBuyDate] = useState('Buy Date');
   const [expiryDate, setExpiryDate] = useState('Expiry Date');
-
   const [number, setNumber] = useState('Number');
   const [quantity, setQuantity] = useState('Quantity');
 

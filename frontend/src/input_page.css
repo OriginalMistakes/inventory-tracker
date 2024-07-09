@@ -6,10 +6,13 @@
     --ocean: #00BFFF;
 }
 
-body {
+#input-page-container {
+    height: 100vh;
+    width: 100vw;
     background-color: var(--pineapple);
     padding: 10px;
     text-align: center;
+    box-sizing: border-box;
 }
 
 input,
@@ -68,4 +71,10 @@ button {
     border-radius: 0.5rem;
     margin: auto;
     padding: 1rem;
+}
+
+#inventory-button {
+    background-color: black;
+    color: #FFFFFF;
+    padding: 0.25rem;
 }

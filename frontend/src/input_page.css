@@ -6,7 +6,8 @@
     --ocean: #00BFFF;
 }
 
-body {
+#input-page-container {
+    height: 100vh;
     background-color: var(--pineapple);
     padding: 10px;
     text-align: center;

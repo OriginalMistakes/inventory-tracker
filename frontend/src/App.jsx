@@ -35,11 +35,16 @@ function App() {
 export default App*/
 
 import React from 'react'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Input_page from './input_page'
 
 const App = () => {
   return (
-      <Input_page />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Input_page />}/>
+        </Routes>
+      </BrowserRouter>
     )
 }
 

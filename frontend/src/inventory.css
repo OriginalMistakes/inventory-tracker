@@ -40,3 +40,30 @@
 .food-name {
     font-size: 2.5rem;
 }
+
+.food-info {
+    padding: 4%;
+    display: flex;
+    flex: 1;
+    font-size: 1rem;
+}
+
+.food-info-numbers {
+    display: grid;
+    flex: 1;
+    grid-template: 1fr 1fr / 1fr;
+}
+
+.food-info-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.food-info-numbers-items {
+    display: flex;
+    justify-content: space-around;
+}
+

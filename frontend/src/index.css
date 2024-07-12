@@ -66,6 +66,14 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-body {
+#root {
+  font-family: "Inknut Antiqua", serif;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
+  background: rgb(255,158,6);
+  background: -moz-linear-gradient(66deg, rgba(255,158,6,1) 0%, rgba(11,209,255,1) 46%, rgba(232,255,0,1) 100%);
+  background: -webkit-linear-gradient(66deg, rgba(255,158,6,1) 0%, rgba(11,209,255,1) 46%, rgba(232,255,0,1) 100%);
+  background: linear-gradient(66deg, rgba(255,158,6,1) 0%, rgba(11,209,255,1) 46%, rgba(232,255,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff9e06",endColorstr="#e8ff00",GradientType=1);
 }

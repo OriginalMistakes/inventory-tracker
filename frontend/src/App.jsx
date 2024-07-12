@@ -38,12 +38,14 @@ import React from 'react'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Input_page from './input_page'
 import Inventory from './inventory'
+import Homepage from '../Homepage'
 
 const App = () => {
   return (
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Input_page />}/>
+          <Route path='/' element={<Homepage />}/>
+          <Route path='/input' element={<Input_page />}/>
           <Route path='/inventory' element={<Inventory />}/>
         </Routes>
       </BrowserRouter>
